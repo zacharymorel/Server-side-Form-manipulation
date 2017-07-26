@@ -1,7 +1,7 @@
 {
   "private": true,
-  "scripts": "node server.js",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mustache-express": "^1.2.5"
   }

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>Name: {{getName}}</p>
+    <p>Email: {{getEmail}}</p>
+    <p>Year of Birth: {{yearOfBirth}}</p>
+    <p>Profession: {{select}}</p>
+    <p>Password: {{password}}</p>
+  </body>
+</html>
