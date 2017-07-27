@@ -29,20 +29,20 @@ app.post('/signup', (request, response) => {
   request.checkBody('select', 'Select One Please.').notEmpty()
   request.checkBody('password', 'Password is needed.').notEmpty().isLength(8, 20)
 
-   var errors = request.validationErrors()
+   const errors = request.validationErrors()
    if (errors) {
       const errorsData = {
         errors: errors
       }
       response.render('signup', errorsData)
    } else {
-      response.render('signup'){
-      getName: varequest.body.getName,
-      getEmail: varrequest.body.getEmail,
-      yearOfBirth: vrequest.body.yearOfBirth,
-      select: profrequest.body.select,
+     response.render('signup', {
+      getName: request.body.getName,
+      getEmail: request.body.getEmail,
+      yearOfBirth: request.body.yearOfBirth,
+      select: request.body.select,
       password: request.body.password
-    }
+    })
   }
 
 })

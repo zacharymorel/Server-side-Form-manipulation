@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
+    {{#errorsData}}
+      <p>{{msg}}</p>
+    {{/errorsData}}
     <p>Name: {{getName}}</p>
     <p>Email: {{getEmail}}</p>
     <p>Year of Birth: {{yearOfBirth}}</p>
