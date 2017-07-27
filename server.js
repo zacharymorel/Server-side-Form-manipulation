@@ -31,20 +31,20 @@ app.post('/signup', (request, response) => {
 
    var errors = request.validationErrors()
    if (errors) {
-      var html = errors
-      response.render(html)
+      const errorsData = {
+        errors: errors
+      }
+      response.render('signup', errorsData)
    } else {
-    var name = request.body.getName
-    var email = request.body.getEmail
-    var yob = request.body.yearOfBirth
-    var profession = request.body.select
-    var pw = request.body.password
-    var html = `<p>Your Name: ${name}</p>
-    <p>Your Email: ${email}</p>
-    <p>Your Birthyear: ${yob}</p>
-    <p>Your Job: ${selected}</p>
-    <p>Your Password: ${pw}</p>`
+      response.render('signup'){
+      getName: varequest.body.getName,
+      getEmail: varrequest.body.getEmail,
+      yearOfBirth: vrequest.body.yearOfBirth,
+      select: profrequest.body.select,
+      password: request.body.password
+    }
   }
+
 })
 
 
