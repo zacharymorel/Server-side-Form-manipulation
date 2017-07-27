@@ -25,11 +25,13 @@ app.get('/', (request, response) => {
 app.post('/signup', (request, response) => {
   request.checkBody('getName', 'You must enter your name!').notEmpty().isLength(0, 100)
   request.checkBody('getEmail', 'Your must enter your email!').isEmail().isLength(0, 100)
-  request.checkBody('yearOfBirth', 'Birth year is needed.').notEmpty().isLength(1900, 2017)
+  request.checkBody('yearOfBirth', 'Birth year is needed.').notEmpty()
   request.checkBody('select', 'Select One Please.').notEmpty()
   request.checkBody('password', 'Password is needed.').notEmpty().isLength(8, 20)
 
+  console.log(request.body)
    const errors = request.validationErrors()
+   console.log(errors);
    if (errors) {
       const errorsData = {
         errors: errors
